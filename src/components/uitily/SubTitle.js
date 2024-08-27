@@ -3,11 +3,14 @@ import { Button } from "react-bootstrap";
 
 export default function SubTitle({ title, btntitle }) {
   return (
-    <div className="d-flex justify-content-between m-3">
+    <div className="d-flex justify-content-between mt-5 mb-3">
       <h3 className="font "> {title}</h3>
-      <Button variant="outline-dark" className="font">
-        {btntitle}
-      </Button>
+
+      {btntitle ? (
+        <Button variant="outline-dark" className="font">
+          {btntitle}
+        </Button>
+      ) : null}
     </div>
   );
 }
