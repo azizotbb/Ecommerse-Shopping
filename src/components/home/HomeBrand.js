@@ -1,14 +1,12 @@
 import React from "react";
 import { Container, Row } from "react-bootstrap";
 import SubTitle from "../uitily/SubTitle";
-import Pagination from "../uitily/Pagination";
-import BrandCard from "./BrandCard";
+import BrandCard from "../brand/BrandCard";
 
-export default function BrandContainer() {
+export default function HomeBrand() {
   return (
-    <Container>
-      <SubTitle title="التصنيفات" />
-
+    <Container className="pb-5">
+      <SubTitle btntitle="المزيد" title="اشهر البراندات" path="/allbarnd" />
       <Row className="pt-3 d-flex justify-content-center ">
         <BrandCard />
         <BrandCard />
@@ -16,14 +14,7 @@ export default function BrandContainer() {
         <BrandCard />
         <BrandCard />
         <BrandCard />
-        <BrandCard />
-        <BrandCard />
-        <BrandCard />
-        <BrandCard />
-        <BrandCard />
-        <BrandCard />
       </Row>
-      <Pagination />
     </Container>
   );
 }

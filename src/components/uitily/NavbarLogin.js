@@ -10,7 +10,7 @@ export default function NavbarLogin() {
   return (
     <Navbar expand="lg" bg="dark">
       <Container fluid>
-        <Navbar.Brand href="#">
+        <Navbar.Brand href="/">
           <img
             alt="logo"
             src={logo}
@@ -37,7 +37,10 @@ export default function NavbarLogin() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="#" className="d-flex justify-content-center mt-3">
+            <Nav.Link
+              href="/login"
+              className="d-flex justify-content-center mt-3"
+            >
               <FontAwesomeIcon
                 icon={faUser}
                 style={{ color: "#ffffff" }}
@@ -45,7 +48,10 @@ export default function NavbarLogin() {
               />
               <p className="nav-text">دخول</p>
             </Nav.Link>
-            <Nav.Link href="#" className="d-flex justify-content-center mt-3">
+            <Nav.Link
+              href="cart"
+              className="d-flex justify-content-center mt-3"
+            >
               <FontAwesomeIcon
                 icon={faCartShopping}
                 style={{ color: "#ffffff" }}

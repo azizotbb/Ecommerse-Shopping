@@ -8,7 +8,7 @@ import iphone from "../../imgs/iphone.png";
 export default function HomeCategory() {
   return (
     <Container>
-      <SubTitle btntitle="المزيد" title="التصنيفات" />
+      <SubTitle btntitle="المزيد" title="التصنيفات" path="/allcategory" />
       <Row className="pt-3 d-flex justify-content-center ">
         <CategoryCard title="لابتوبات" color="lightskyblue" img={laptop} />
         <CategoryCard title="جوالات" color="lightcoral" img={iphone} />
