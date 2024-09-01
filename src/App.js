@@ -5,6 +5,7 @@ import LoginPage from "./pages/auth/LoginPage";
 import RegistrarPag from "./pages/auth/RegistrarPag";
 import AllCategory from "./pages/category/AllCategory";
 import AllBrand from "./pages/brand/AllBrand";
+import ShopProductPage from "./pages/product/ShopProductPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/registrar" element={<RegistrarPag />} />
           <Route path="/allcategory" element={<AllCategory />} />
           <Route path="/allbarnd" element={<AllBrand />} />
+          <Route path="/product" element={<ShopProductPage />} />
         </Routes>
       </BrowserRouter>
     </div>

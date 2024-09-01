@@ -32,11 +32,28 @@
   height: 110px;
   width: 90px;
 }
+
+.cat-product-header {
+  margin: 6px;
+  padding: 4px;
+  font-family: "Almarai", sans-serif;
+  cursor: pointer;
+}
+
+.cat-product-header:hover {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.564);
+  color: white;
+}
 /* product */
 
 .product-img {
   width: 100%;
   height: 220px;
+}
+
+.product-header {
+  background-color: #edeaea;
 }
 
 /* discount section */
@@ -68,5 +85,34 @@
 /* auth */
 
 .auth-text {
+  text-align: center;
+}
+
+/*dropdown*/
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown > .dropdown-toggle:active {
+  pointer-events: none;
+}
+
+.filter-title {
+  color: #555550;
+  font-family: "Almarai";
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 20px;
+  text-align: right;
+}
+
+.filter-sub {
+  color: #555550;
+  font-family: "Almarai";
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 17px;
   text-align: center;
 }
