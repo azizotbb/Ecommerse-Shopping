@@ -8,7 +8,7 @@ import Pagination from "../../components/uitily/Pagination";
 
 export default function ShopProductPage() {
   return (
-    <div style={{ height: "680px" }}>
+    <div style={{ minHeight: "680px", maxHeight: "fit-content" }}>
       <CategoryHeader />
       <Container>
         <SearchCountResult />

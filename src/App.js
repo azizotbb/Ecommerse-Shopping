@@ -7,6 +7,8 @@ import AllCategory from "./pages/category/AllCategory";
 import AllBrand from "./pages/brand/AllBrand";
 import ShopProductPage from "./pages/product/ShopProductPage";
 import ProductDetailsPage from "./pages/product/ProductDetailsPage";
+import Footer from "./components/uitily/Footer ";
+import CartPage from "./pages/cart/CartPage";
 
 function App() {
   return (
@@ -22,8 +24,10 @@ function App() {
           <Route path="/allbarnd" element={<AllBrand />} />
           <Route path="/product" element={<ShopProductPage />} />
           <Route path="/Details/:id" element={<ProductDetailsPage />} />
+          <Route path="/cart" element={<CartPage />} />
         </Routes>
       </BrowserRouter>
+      <Footer />
     </div>
   );
 }

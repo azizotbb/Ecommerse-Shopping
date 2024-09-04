@@ -7,7 +7,7 @@ import ProductsCardContainer from "../../components/product/ProductsCardContaine
 
 export default function ProductDetailsPage() {
   return (
-    <div style={{ height: "680px" }}>
+    <div style={{ minHeight: "680px", maxHeight: "fit-content" }}>
       <CategoryHeader />
       <Container>
         <ProductDetails />

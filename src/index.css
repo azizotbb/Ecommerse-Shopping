@@ -12,6 +12,32 @@
   color: white;
 }
 
+/* foter */
+.footer-background {
+  background-color: #ffffff;
+}
+
+.footer {
+  width: 100%;
+}
+.footer-shroot {
+  color: #979797;
+  font-family: "Almarai";
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 18px;
+  cursor: pointer;
+}
+
+.footer-phone {
+  color: #979797;
+  font-family: "Almarai";
+  font-size: 13px;
+  font-weight: bold;
+  text-align: right;
+  cursor: pointer;
+}
 /* category */
 
 .category-Img-background {
@@ -246,4 +272,53 @@
   border: 1px solid #979797;
   border-radius: 8px;
   background-color: #f9f9f9;
+}
+
+/* cart page */
+.cart-title {
+  color: #555550;
+  font-family: Almarai;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 28px;
+  text-align: right;
+}
+.cart-item-body {
+  height: 229px;
+  width: 100%;
+  border-radius: 20px;
+  background-color: #ffffff;
+}
+.copon-input {
+  box-sizing: border-box;
+  height: 46px;
+  width: 90%;
+  border: 1px solid #979797;
+  font-family: "Almarai";
+  font-size: 12px;
+  font-weight: normal;
+}
+.copon-btn {
+  cursor: pointer;
+  border: none;
+  height: 46px;
+  padding-top: 5px;
+  border-radius: 5px !important;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px !important;
+  border-radius: 0 !important;
+  background-color: #272727;
+  color: #ffff !important;
+  font-family: "Almarai";
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.cart-checkout {
+  height: 250px;
+  width: 100%;
+  border-radius: 20px;
+  background-color: #ffffff;
 }

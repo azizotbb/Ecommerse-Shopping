@@ -3,7 +3,7 @@ import BrandContainer from "../../components/brand/BrandContainer";
 
 export default function AllBrand() {
   return (
-    <div>
+    <div style={{ minHeight: "680px", maxHeight: "fit-content" }}>
       <BrandContainer />
     </div>
   );
