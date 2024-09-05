@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import laptop from "../../imgs/laptop.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 export default function CartItem() {
   return (
@@ -20,8 +20,8 @@ export default function CartItem() {
             <div className="d-inline pt-2 cat-text">الاكترونيات</div>
             <div className="d-flex pt-2 " style={{ cursor: "pointer" }}>
               <FontAwesomeIcon
-                icon={faXmark}
-                style={{ color: "#ff0000", width: "20px", height: "24px" }}
+                icon={faTrash}
+                style={{ width: "16px", height: "18px" }}
               />
               <div className="cat-text d-inline me-2">ازاله</div>
             </div>

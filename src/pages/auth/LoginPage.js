@@ -57,6 +57,10 @@ export default function LoginPage() {
           </Link>
         </h5>
       </Form>
+
+      <Link to="/admin/allproducts">
+        <p>Log in as an admin</p>
+      </Link>
     </div>
   );
 }
