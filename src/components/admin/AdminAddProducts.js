@@ -1,56 +1,107 @@
 import Multiselect from "multiselect-react-dropdown";
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import avatar from "../../imgs/avatar.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquarePlus } from "@fortawesome/free-regular-svg-icons/faSquarePlus";
+import MultiImageInput from "react-multiple-image-input";
+import AdminAddProductsHook from "../../hooks/product/AdminAddProductsHook";
+import { useSelector } from "react-redux";
+import { CompactPicker } from "react-color";
 
 export default function AdminAddProducts() {
-  const onSelect = () => {};
-  const onRemove = () => {};
+  const [
+    onChangeDesName,
+    onChangeQty,
+    onChangeColor,
+    onChangePriceAfter,
+    onChangePriceBefor,
+    onChangeProdName,
+    showColor,
+    categories,
+    brands,
+    priceAftr,
+    images,
+    setImages,
+    onSelect,
+    onRemove,
+    options,
+    handelChangeComplete,
+    removeColor,
+    onSeletCategory,
+    handelSubmit,
+    onSeletBrand,
+    colors,
+    priceBefore,
+    qty,
+    prodDes,
+    prodName,
+  ] = AdminAddProductsHook();
 
-  const options = [
-    { name: "التصنيف الاول", id: 1 },
-    { name: "التصنيف الثاني", id: 2 },
-  ];
   return (
     <div>
       <Row className="justify-content-start ">
         <div className="admin-content-text pb-4"> اضافه منتج جديد</div>
         <Col sm="8">
           <div className="text-form pb-2"> صور للمنتج</div>
-          <img src={avatar} alt="" height="100px" width="120px" />
+          <MultiImageInput
+            images={images}
+            setImages={setImages}
+            theme={"light"}
+            allowCrop={false}
+            max={4}
+          />
           <input
+            value={prodName}
+            onChange={onChangeProdName}
             type="text"
             className="input-form d-block mt-3 px-3"
             placeholder="اسم المنتج"
           />
           <textarea
+            value={prodDes}
+            onChange={onChangeDesName}
             className="input-form-area p-2 mt-3"
             rows="4"
             cols="50"
             placeholder="وصف المنتج"
           />
           <input
+            value={priceBefore}
+            onChange={onChangePriceBefor}
             type="number"
             className="input-form d-block mt-3 px-3"
             placeholder="السعر قبل الخصم"
           />
+
           <input
+            value={priceAftr}
+            onChange={onChangePriceAfter}
             type="number"
             className="input-form d-block mt-3 px-3"
             placeholder="سعر المنتج"
           />
+          <input
+            value={qty}
+            onChange={onChangeQty}
+            type="number"
+            className="input-form d-block mt-3 px-3"
+            placeholder="الكمية المتاحة"
+          />
           <select
-            name="languages"
-            id="lang"
-            className="select input-form-area mt-3 px-2 "
+            name="category"
+            className="select mt-3 px-2 "
+            onChange={onSeletCategory}
           >
-            <option value="val">التصنيف الرئيسي</option>
-            <option value="val">التصنيف الاول</option>
-            <option value="val2">التصنيف الثاني</option>
-            <option value="val2">التصنيف الثالث</option>
-            <option value="val2">التصنيف الرابع</option>
+            <option value="0">اختر تصنيف رئيسي</option>
+            {categories
+              ? categories.map((item, index) => {
+                  return (
+                    <option key={index} value={item._id}>
+                      {item.name}
+                    </option>
+                  );
+                })
+              : null}
           </select>
 
           <Multiselect
@@ -66,36 +117,46 @@ export default function AdminAddProducts() {
             name="brand"
             id="brand"
             className="select input-form-area mt-3 px-2 "
+            onChange={onSeletBrand}
           >
             <option value="val">الماركة</option>
-            <option value="val2">التصنيف الماركة الاولي</option>
-            <option value="val2">التصنيف الماركة الثانيه</option>
-            <option value="val2">التصنيف الرابع</option>
+            {brands
+              ? brands.map((item, index) => {
+                  return (
+                    <option key={index} value={item._id}>
+                      {item.name}
+                    </option>
+                  );
+                })
+              : null}
           </select>
           <div className="text-form mt-3 "> الالوان المتاحه للمنتج</div>
           <div className="mt-1 d-flex">
-            <div
-              className="color ms-2 border  mt-1"
-              style={{ backgroundColor: "#E52C2C" }}
-            ></div>
-            <div
-              className="color ms-2 border mt-1 "
-              style={{ backgroundColor: "white" }}
-            ></div>
-            <div
-              className="color ms-2 border  mt-1"
-              style={{ backgroundColor: "black" }}
-            ></div>
+            {colors.map((item) => {
+              return (
+                <div
+                  onClick={() => removeColor(item)}
+                  className="color ms-2 border  mt-1"
+                  style={{ backgroundColor: item }}
+                ></div>
+              );
+            })}
             <FontAwesomeIcon
               icon={faSquarePlus}
-              style={{ width: "30px", height: "35px" }}
+              style={{ width: "30px", height: "35px", cursor: "pointer" }}
+              onClick={onChangeColor}
             />
+            {showColor === true ? (
+              <CompactPicker onChangeComplete={handelChangeComplete} />
+            ) : null}
           </div>
         </Col>
       </Row>
       <Row>
         <Col sm="8" className="d-flex justify-content-end ">
-          <button className="btn-save d-inline mt-2 ">حفظ التعديلات</button>
+          <button onClick={handelSubmit} className="btn-save d-inline mt-2 ">
+            حفظ التعديلات
+          </button>
         </Col>
       </Row>
     </div>

@@ -5,8 +5,13 @@ import { Col, Container, Row } from "react-bootstrap";
 import RateItem from "./RateItem";
 import RatePost from "./RatePost";
 import Pagination from "../uitily/Pagination";
+import ViewAllReviewHook from "../../hooks/review/ViewAllReviewHook";
+import { useParams } from "react-router-dom";
 
-export default function RateContaine() {
+export default function RateContaine({ rateAvg, ratingsQuantity }) {
+  const { id } = useParams();
+
+  const [productReviews, onPress] = ViewAllReviewHook(id);
   return (
     <Container className="rate-container">
       <Row>
@@ -21,16 +26,33 @@ export default function RateContaine() {
               paddingTop: "8px",
             }}
           />
-          <div className="cat-rate  d-inline  p-1 pt-2">9.9</div>
-          <div className="rate-count d-inline p-1 pt-2">({`  تقيم`})</div>
+          <div className="cat-rate  d-inline  p-1 pt-2">{rateAvg}</div>
+          <div className="rate-count d-inline p-1 pt-2">
+            ({` ${ratingsQuantity} تقيم`})
+          </div>
         </Col>
       </Row>
       <RatePost />
-      <RateItem />
-      <RateItem />
-      <RateItem />
-      <RateItem />
-      <Pagination />
+
+      {productReviews.data ? (
+        productReviews.data.map((review, index) => {
+          return <RateItem key={index} review={review} />;
+        })
+      ) : (
+        <h6>لا يوجد تقيمات الان</h6>
+      )}
+
+      {productReviews.paginationResult &&
+      productReviews.paginationResult.numberOfPages >= 2 ? (
+        <Pagination
+          pageCount={
+            productReviews.paginationResult
+              ? productReviews.paginationResult.numberOfPages
+              : 0
+          }
+          getPage={onPress}
+        />
+      ) : null}
     </Container>
   );
 }

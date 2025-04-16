@@ -21,7 +21,7 @@ export default function Slider() {
             style={{ height: "296px", width: "313" }}
           />
           <div>
-            <p> هنالك خصومات كبيره </p>
+            <p> خصومات كبيره </p>
             <h3>خصم يصل الى 50%</h3>
           </div>
         </div>

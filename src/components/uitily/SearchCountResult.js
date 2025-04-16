@@ -3,12 +3,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
-export default function SearchCountResult() {
+export default function SearchCountResult({ onClick, title }) {
+  const clickMe = (key) => {
+    localStorage.setItem("sortType", key);
+    onClick();
+  };
   return (
     <Container>
       <Row className="mt-4">
         <Col className="d-flex justify-content-between">
-          <h3 className="font"> نتائج البحث 10</h3>
+          <h3 className="font"> {title}</h3>
           {/** dropdown */}
           <div class="dropdown" style={{ paddingLeft: "65px" }}>
             <button
@@ -24,20 +28,20 @@ export default function SearchCountResult() {
               <FontAwesomeIcon icon={faCircleDown} /> ترتيب حسب
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li>
-                <a class="dropdown-item" href="/">
-                  الاكثر مبيعا
-                </a>
+              <li onClick={() => clickMe("")}>
+                <div class="dropdown-item">بدون ترتيب</div>
               </li>
-              <li>
-                <a class="dropdown-item " href="/">
-                  الاعلى تقيم
-                </a>
+              <li onClick={() => clickMe("الاكثر مبيعا")}>
+                <div class="dropdown-item">الاكثر مبيعا</div>
               </li>
-              <li>
-                <a class="dropdown-item " href="/">
-                  السعر من الاقل الى الاعلى
-                </a>
+              <li onClick={() => clickMe("الاعلى تقيم")}>
+                <div class="dropdown-item ">الاعلى تقيم</div>
+              </li>
+              <li onClick={() => clickMe("السعر من الاقل الى الاعلى")}>
+                <div class="dropdown-item ">السعر من الاقل الى الاعلى</div>
+              </li>
+              <li onClick={() => clickMe("السعر من الاعلى الى الاقل")}>
+                <div class="dropdown-item ">السعر من الاعلى الى الاقل</div>
               </li>
             </ul>
           </div>

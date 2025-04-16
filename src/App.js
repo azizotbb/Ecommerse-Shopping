@@ -17,6 +17,13 @@ import AdminAddBrandPage from "./pages/admin/AdminAddBrandPage";
 import AdminAddCategoryPage from "./pages/admin/AdminAddCategoryPage";
 import AdminAddSubCategoryPage from "./pages/admin/AdminAddSubCategoryPage";
 import AdminAddProductsPage from "./pages/admin/AdminAddProductsPage";
+import UserAllOrdersPage from "./pages/user/UserAllOrdersPage";
+import UserFavoriteProductsPage from "./pages/user/UserFavoriteProductsPage";
+import UserAllAddresPage from "./pages/user/UserAllAddresPage";
+import UserAddAddressPage from "./pages/user/UserAddAddressPage";
+import UserEditAddressPage from "./pages/user/UserEditAddressPage";
+import UserProfilePage from "./pages/user/UserProfilePage";
+import ForgetPasswordPage from "./pages/auth/ForgetPasswordPage";
 
 function App() {
   return (
@@ -44,6 +51,16 @@ function App() {
             element={<AdminAddSubCategoryPage />}
           />
           <Route path="/admin/addproduct" element={<AdminAddProductsPage />} />
+          <Route path="/user/allorders" element={<UserAllOrdersPage />} />
+          <Route
+            path="/user/favoriteproducts"
+            element={<UserFavoriteProductsPage />}
+          />
+          <Route path="/user/addresses" element={<UserAllAddresPage />} />
+          <Route path="/user/add-address" element={<UserAddAddressPage />} />
+          <Route path="/user/edit-address" element={<UserEditAddressPage />} />
+          <Route path="/user/profile" element={<UserProfilePage />} />
+          <Route path="/user/forgetPassword" element={<ForgetPasswordPage />} />
         </Routes>
       </BrowserRouter>
       <Footer />
